@@ -2,6 +2,7 @@ import genToken from "../config/token.js"
 import User from "../models/user.model.js"
 import bcrypt from "bcryptjs"
 
+// SignUp
 export const signUp = async (req,res)=>{
     try {
         const {name,email,password,userName} = req.body
@@ -19,7 +20,7 @@ export const signUp = async (req,res)=>{
         }
 
         if(password.length<6){
-            
+            return res.status(400).json({message:"Password must be atleast 6 characters !"})
         }
 
         const hassedpassword = await bcrypt.hash(password,10)
@@ -50,6 +51,7 @@ export const signUp = async (req,res)=>{
 }
 
 
+//SignIn
 export const signIn = async (req,res)=>{
     try {
         const {password,userName} = req.body
@@ -86,3 +88,15 @@ export const signIn = async (req,res)=>{
         return res.status(500).json({message:`signup error ${error}`})
     }
 }
+
+
+//SignOut/Logout
+export const signOut = async (req,res)=>{
+    try {
+        res.clearCookie("token")
+        res.status(200).json({message:"SignOut successfully"})
+    } catch (error) {
+        res.status(400).json({message:`sign out error ${error}`})
+    }
+}
+
