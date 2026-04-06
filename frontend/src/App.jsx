@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import SignUp from './assets/pages/SignUp'
-import SignIn from './assets/pages/SignIn'
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn'
 
 const App = () => {
   return (
