@@ -28,6 +28,7 @@ const SignUp = () => {
           </div>
            
            {/* Password....... */}
+           
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl mt-[30px] border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,password:true})}}>
             <label htmlFor="password" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.password?"top-[-15px]" : ""} `}>Enter Password</label>
               <input type="password" id='password' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
