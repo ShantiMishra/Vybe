@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignUp = () => {
+const SignIn = () => {
 
     const [inputClicked,setInputClicked]=useState({
       userName:false,
