@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logo from "../assets/logo2.png"
-import { IoEye } from "react-icons/io5";
-
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 const SignUp = () => {
 
     const [inputClicked,setInputClicked]=useState({
@@ -11,7 +11,7 @@ const SignUp = () => {
       password:false
     })
 
-
+const [showPassword,setShowpassword] = useState(false)
 
   return (
     <div className='w-full h-screen bg-gradient-to-b from-black to-gray-900 flex flex-col justify-center items-center '>
@@ -44,8 +44,8 @@ const SignUp = () => {
            {/* Password....... */}
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl mt-[30px] border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,password:true})}}>
             <label htmlFor="password" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.password?"top-[-15px]" : ""} `}>Enter Password</label>
-              <input type="password" id='password' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
-             <IoEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' />
+              <input type={showPassword?"text":"password"} id='password' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
+            {!showPassword?  <IoIosEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(true)}/>: <IoIosEyeOff className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(false)}/>}
           </div>
          
         </div>
