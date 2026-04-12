@@ -1,4 +1,8 @@
 import React from 'react'
+import { useState } from 'react'
+import logo from "../assets/logo2.png"
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 
 const SignIn = () => {
 
@@ -15,7 +19,7 @@ const SignIn = () => {
         <div className='w-full lg:w-[50%] h-full bg-white flex flex-col items-center justify-center p-[10px] gap-[13px]'>
 
           <div className='flex gap-[10px] items-center text=[20px] font-semibold pb-[10px]'>
-            <span>Sign Up To </span>
+            <span>Sign In To </span>
             <img src={logo} alt="" className='w-[70px]'/>
           </div>
             
@@ -32,11 +36,13 @@ const SignIn = () => {
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl mt-[30px] border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,password:true})}}>
             <label htmlFor="password" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.password?"top-[-15px]" : ""} `}>Enter Password</label>
               <input type="password" id='password' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
-             <IoEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' />
+             
           </div>
+          <button className='w-[60%] bg-black text-white py-[10px] px-[20px] mt-[30px] font-semibold cursor-pointer rounded-2xl hover:opacity-87'>Sign In</button>
          
         </div>
         <div className='md:w-[50%] h-full hidden lg:flex justify-center items-center bg-[#000000] flex-col gap-[10px] text-white text-[16px] font-semibold rounded-l-[25px] shadow-2xl shadow-black'>
+
 
         </div>
       </div>
