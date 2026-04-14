@@ -42,7 +42,8 @@ const SignIn = () => {
          
         </div>
         <div className='md:w-[50%] h-full hidden lg:flex justify-center items-center bg-[#000000] flex-col gap-[10px] text-white text-[16px] font-semibold rounded-l-[25px] shadow-2xl shadow-black'>
-
+ 
+ 
 
         </div>
       </div>
