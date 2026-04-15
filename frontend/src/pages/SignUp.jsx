@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from "../assets/logo2.png"
+import logo2 from "../assets/logo(vybe).png"
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 const SignUp = () => {
@@ -12,6 +13,11 @@ const SignUp = () => {
     })
 
 const [showPassword,setShowpassword] = useState(false)
+
+const [name,setName] = useState("")
+const [userName,setUserName] = useState("")
+const [email,setEmail] = useState("")
+const [password,setpassword] = useState("")
 
   return (
     <div className='w-full h-screen bg-gradient-to-b from-black to-gray-900 flex flex-col justify-center items-center '>
@@ -37,7 +43,7 @@ const [showPassword,setShowpassword] = useState(false)
           </div>
            {/* Email....... */}
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,email:true})}}>
-            <label htmlFor="email" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.email?"top-[-15px]" : ""} `}>Enter Your Name</label>
+            <label htmlFor="email" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.email?"top-[-15px]" : ""} `}>Enter Your Email Id</label>
               <input type="email" id='email' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
             
           </div>
@@ -54,6 +60,8 @@ const [showPassword,setShowpassword] = useState(false)
          
         </div>
         <div className='md:w-[50%] h-full hidden lg:flex justify-center items-center bg-[#000000] flex-col gap-[10px] text-white text-[16px] font-semibold rounded-l-[25px] shadow-2xl shadow-black'>
+          <img src={logo2} className='w-[40%]' alt="" />
+          <p>Not Just A Platform , It's  A VYBE</p>
 
         </div>
         
