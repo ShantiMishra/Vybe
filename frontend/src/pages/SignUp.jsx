@@ -17,7 +17,7 @@ const [showPassword,setShowpassword] = useState(false)
 const [name,setName] = useState("")
 const [userName,setUserName] = useState("")
 const [email,setEmail] = useState("")
-const [password,setpassword] = useState("")
+const [password,setPassword] = useState("")
 
   return (
     <div className='w-full h-screen bg-gradient-to-b from-black to-gray-900 flex flex-col justify-center items-center '>
@@ -32,26 +32,26 @@ const [password,setpassword] = useState("")
             {/* Name....... */}
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,name:true})}}>
             <label htmlFor="name" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.name?"top-[-15px]" : ""} `}>Enter Your Name</label>
-              <input type="text" id='name' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
+              <input type="text" id='name' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' onChange={(e)=>setName(e.target.value)} required/>
             
           </div>
            {/* userName....... */}
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl  border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,userName:true})}}>
             <label htmlFor="userName" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.userName?"top-[-15px]" : ""} `}>Enter Your UserName</label>
-              <input type="text" id='userName' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
+              <input type="text" id='userName' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' onChange={(e)=>setUserName(e.target.value)} required/>
             
           </div>
            {/* Email....... */}
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,email:true})}}>
             <label htmlFor="email" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.email?"top-[-15px]" : ""} `}>Enter Your Email Id</label>
-              <input type="email" id='email' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
+              <input type="email" id='email' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' onChange={(e)=>setEmail(e.target.value)} required/>
             
           </div>
            {/* Password....... */}
           <div className='relative flex items-center justify-start w-[90%] h-[50px] rounded-2xl  border-2 border-black'onClick={()=>{setInputClicked({...inputClicked,password:true})}}>
             <label htmlFor="password" className={`text-gray-700 absolute left-[20px] px-[5px] bg-white text-[14px] ${inputClicked.password?"top-[-15px]" : ""} `}>Enter Password</label>
-              <input type={showPassword?"text":"password"} id='password' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' required/>
-            {!showPassword?  <IoIosEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(true)}/>: <IoIosEyeOff className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(false)}/>}
+              <input type={showPassword?"text":"password"} id='password' className='w-[100%] h-[100%] rounded-2xl px-[20px] outline-none border-0 ' onChange={(e)=>setPassword(e.target.value)} required/>
+            {!showPassword?  <IoIosEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(true)}/>: <IoIosEyeOff className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(false)}  />}
           </div>
 
           <button className='w-[60%] bg-black text-white py-[10px] px-[20px] mt-[30px] font-semibold cursor-pointer rounded-2xl hover:opacity-87'>Sign Up</button>
