@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo from "../assets/logo2.png"
 import logo2 from "../assets/logo(vybe).png"
+import axios from 'axios'
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 const SignUp = () => {
@@ -18,6 +19,14 @@ const [name,setName] = useState("")
 const [userName,setUserName] = useState("")
 const [email,setEmail] = useState("")
 const [password,setPassword] = useState("")
+
+const handleSignUp=async ()=>{
+  try {
+    const result = await axios
+  } catch (error) {
+    
+  }
+}
 
   return (
     <div className='w-full h-screen bg-gradient-to-b from-black to-gray-900 flex flex-col justify-center items-center '>
