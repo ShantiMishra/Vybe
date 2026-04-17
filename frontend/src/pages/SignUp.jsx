@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import logo from "../assets/logo2.png"
 import logo2 from "../assets/logo(vybe).png"
 import axios from 'axios'
+import { ClipLoader } from "react-spinners";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import { serverUrl } from '../App';
 const SignUp = () => {
 
     const [inputClicked,setInputClicked]=useState({
@@ -15,16 +17,24 @@ const SignUp = () => {
 
 const [showPassword,setShowpassword] = useState(false)
 
+const [loading,setLoading]=useState(false)
+
 const [name,setName] = useState("")
 const [userName,setUserName] = useState("")
 const [email,setEmail] = useState("")
 const [password,setPassword] = useState("")
 
+
+
 const handleSignUp=async ()=>{
+  setLoading(true)
   try {
-    const result = await axios
+    const result = await axios.post(`${serverUrl}/api/auth/signup` , {name,userName,email,password})
+    console.log(result.data)
+    setLoading(false)
   } catch (error) {
-    
+    console.log(error.response?.data || error.message);
+    setLoading(false)
   }
 }
 
@@ -63,7 +73,9 @@ const handleSignUp=async ()=>{
             {!showPassword?  <IoIosEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(true)}/>: <IoIosEyeOff className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(false)}  />}
           </div>
 
-          <button className='w-[60%] bg-black text-white py-[10px] px-[20px] mt-[30px] font-semibold cursor-pointer rounded-2xl hover:opacity-87'>Sign Up</button>
+
+    {/* SignUp Button...... */}
+          <button className='w-[60%] bg-black text-white py-[10px] px-[20px] mt-[30px] font-semibold cursor-pointer rounded-2xl hover:opacity-87' onClick={handleSignUp} disabled={loading}> {loading?<ClipLoader size={30} color='white'/>:"Sign Up"}</button>
 
           <p className='cursor-pointer text-gray-800'>Already have an account ? <span className='border-b-2 border-b-black text-black'>Sign In</span></p>
          
