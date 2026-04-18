@@ -66,7 +66,7 @@ const handleSignIn=async ()=>{
 
           {/* Forget Password ..*/}
 
-          <div className='w-[90%] px-[20px] cursor-pointer '>Forgot Password</div>
+          <div className='w-[90%] px-[20px] cursor-pointer ' onClick={()=>navigate("/forgot-password")}>Forgot Password</div>
 
 
     {/* SignIn Button...... */}
