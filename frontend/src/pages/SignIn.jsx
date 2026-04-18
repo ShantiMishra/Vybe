@@ -64,8 +64,12 @@ const handleSignIn=async ()=>{
             {!showPassword?  <IoIosEye className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(true)}/>: <IoIosEyeOff className='absolute cursor-pointer right-[20px] w-[25px] h-[25px]' onClick={()=>setShowpassword(false)}  />}
           </div>
 
+          {/* Forget Password ..*/}
 
-    {/* SignUp Button...... */}
+          <div className='w-[90%] px-[20px] cursor-pointer '>Forgot Password</div>
+
+
+    {/* SignIn Button...... */}
           <button className='w-[60%] bg-black text-white py-[10px] px-[20px] mt-[30px] font-semibold cursor-pointer rounded-2xl hover:opacity-87' onClick={handleSignIn} disabled={loading}> {loading?<ClipLoader size={30} color='white'/>:"Sign In"}</button>
 
           <p className='cursor-pointer text-gray-800' onClick={()=>navigate("/signup")}>Want To Create A New Account ? <span className='border-b-2 border-b-black text-black'>Sign Up</span></p>
