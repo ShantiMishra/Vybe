@@ -6,6 +6,7 @@ import { ClipLoader } from "react-spinners";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { serverUrl } from '../App';
+import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
 
     const [inputClicked,setInputClicked]=useState({
@@ -23,6 +24,8 @@ const [name,setName] = useState("")
 const [userName,setUserName] = useState("")
 const [email,setEmail] = useState("")
 const [password,setPassword] = useState("")
+
+const navigate = useNavigate()
 
 
 
@@ -77,7 +80,7 @@ const handleSignUp=async ()=>{
     {/* SignUp Button...... */}
           <button className='w-[60%] bg-black text-white py-[10px] px-[20px] mt-[30px] font-semibold cursor-pointer rounded-2xl hover:opacity-87' onClick={handleSignUp} disabled={loading}> {loading?<ClipLoader size={30} color='white'/>:"Sign Up"}</button>
 
-          <p className='cursor-pointer text-gray-800'>Already have an account ? <span className='border-b-2 border-b-black text-black'>Sign In</span></p>
+          <p className='cursor-pointer text-gray-800' onClick={()=>navigate("/signin")}>Already Have An Account ? <span className='border-b-2 border-b-black text-black'>Sign In</span></p>
          
         </div>
         <div className='md:w-[50%] h-full hidden lg:flex justify-center items-center bg-[#000000] flex-col gap-[10px] text-white text-[16px] font-semibold rounded-l-[25px] shadow-2xl shadow-black'>
